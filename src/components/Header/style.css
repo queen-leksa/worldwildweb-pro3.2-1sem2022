@@ -1,0 +1,12 @@
+header {
+    padding: 30px;
+    background-color: #0006;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search {
+    display: flex;
+    gap: 20px;
+}

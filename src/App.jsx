@@ -1,11 +1,13 @@
-import React from "react";
-import Logo from "./assets/logo.svg";
-
+import React, {useState} from "react";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+const animals = ["Амурский тигр", "Преднезиатский леопард", "Ирбис", "Белый медведь", "Горбатый кит"];
 export default () => {
+    const [searchText, search] = useState("");
     return <>
-        <h1>
-            Simple React App
-            <img src={Logo} alt="React"/>
-        </h1>
+        <Header text={searchText} find={search}/>
+        <Main data={animals} sort={searchText}/>
+        <Footer/>
     </>
 }
