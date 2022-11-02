@@ -7,6 +7,7 @@ export default ({text, find}) => {
         <Link to="/" className="logo">Wild World</Link>
         <nav>
             <Link to="/data">Загрузочка...</Link>
+            <Link to="/add">Добавить зверушку</Link>
         </nav>
         <div className="search">
             <input type="search__inp" className="search" value={text} onChange={e => find(e.target.value)}/>

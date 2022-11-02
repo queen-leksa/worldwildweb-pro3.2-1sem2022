@@ -4,8 +4,9 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Data from "./Pages/Data";
 import Single from "./Pages/Single";
-
+import Add from "./Pages/Add";
 import Footer from "./components/Footer";
+
 const animals = ["Амурский тигр", "Преднезиатский леопард", "Ирбис", "Белый медведь", "Горбатый кит"];
 export default () => {
     const [searchText, search] = useState("");
@@ -14,6 +15,7 @@ export default () => {
         <Routes>
             <Route path="/" element={<Main data={animals} sort={searchText}/>}/>
             <Route path="/data" element={<Data/>}/>
+            <Route path="/add" element={<Add/>}/>
             <Route path="/data/:name" element={<Single/>}/>
         </Routes>
         <Footer/>
