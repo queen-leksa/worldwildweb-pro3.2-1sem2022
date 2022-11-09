@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import React, {useContext} from "react";
+import {Ctx} from "../../App";
 import {Link} from "react-router-dom";
 import "./style.css";
 
-export default ({text, find}) => {
+export default () => {
+    const {searchText, updateSerchText} = useContext(Ctx);
     return  <header>
         <Link to="/" className="logo">Wild World</Link>
         <nav>
@@ -10,7 +12,7 @@ export default ({text, find}) => {
             <Link to="/add">Добавить зверушку</Link>
         </nav>
         <div className="search">
-            <input type="search__inp" className="search" value={text} onChange={e => find(e.target.value)}/>
+            <input type="search__inp" className="search" value={searchText} onChange={e => updateSerchText(e.target.value)}/>
             <button className="search__btn">Найти</button>
         </div>
     </header>

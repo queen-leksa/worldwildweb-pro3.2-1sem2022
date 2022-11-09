@@ -1,11 +1,11 @@
 class Api {
-    static async getAll(path = "https://wwf-server.herokuapp.com/api/animals") {
-        return fetch(path).then(res => res.json()).then(data => data);
+    static getAll(path = "https://wwf-server.herokuapp.com/api/animals") {
+        return fetch(path);
     }
-    static async getSingle(id, path = "https://wwf-server.herokuapp.com/api/animals") { // _id
-        return fetch(path + "/" + id).then(res => res.json()).then(data => data);
+    static getSingle(id, path = "https://wwf-server.herokuapp.com/api/animals") { // _id
+        return fetch(path + "/" + id);
     }
-    static async add(body, path = "https://wwf-server.herokuapp.com/api/animals") {
+    static add(body, path = "https://wwf-server.herokuapp.com/api/animals") {
         return fetch(path + "/add", {
             method: "POST",
             headers: {
@@ -13,9 +13,9 @@ class Api {
                 "Accept": "application/json"
             },
             body: JSON.stringify(body)
-        }).then(res => res.json()).then(data => data);
+        })
     }
-    static async update(id, body, path = "https://wwf-server.herokuapp.com/api/animals") {
+    static update(id, body, path = "https://wwf-server.herokuapp.com/api/animals") {
         return fetch(path + "/update/" + id, {
             method: "PUT",
             headers: {
@@ -23,7 +23,7 @@ class Api {
                 "Accept": "application/json"
             },
             body: JSON.stringify(body)
-        }).then(res => res.json()).then(data => data);
+        });
     }
 }
 export default Api;

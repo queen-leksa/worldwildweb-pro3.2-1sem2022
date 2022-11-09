@@ -9,8 +9,11 @@ export default () => {
             "type": type
         }
         console.log(body);
-        // const result = await Api.add(body);
-        // alert(JSON.stringify(result));
+        Api.add(body)
+            .then(res => res.json())
+            .then(result => {
+                alert(JSON.stringify(result));
+            });
     }
     return <main>
         <h1>Добавить информацию</h1>

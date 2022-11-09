@@ -1,18 +1,20 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import {Ctx} from "../../App";
 import "./style.css";
 
-export default ({data, sort}) => {
-    let arr = data.filter(animal => {
-        if (animal.toLowerCase().search(sort.toLowerCase()) !== -1)
+export default () => {
+    const {animals, searchText} = useContext(Ctx);
+    let arr = animals.filter(animal => {
+        if (animal.type.toLowerCase().search(searchText.toLowerCase()) !== -1)
             return animal;
     });
     return  <main>
         <h1>Wild World</h1>
-        {sort && <div>Поиск: {sort}</div>}
+        {searchText && <div>Поиск: {searchText}</div>}
         <ul>
-            {sort ?
-                arr.map(a => <li key={a}>{a}</li>) :
-                data.map(a => <li key={a}>{a}</li>)
+            {searchText ?
+                arr.map(a => <li key={a._id}>{a.type}</li>) :
+                animals.map(a => <li key={a._id}>{a.type}</li>)
             }
         </ul>
     </main>
