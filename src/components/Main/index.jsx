@@ -1,5 +1,6 @@
 import React, {useState, useContext} from "react";
 import {Ctx} from "../../App";
+import Card from "../Card";
 import "./style.css";
 
 export default () => {
@@ -11,10 +12,10 @@ export default () => {
     return  <main>
         <h1>Wild World</h1>
         {searchText && <div>Поиск: {searchText}</div>}
-        <ul>
+        <ul className="cards">
             {searchText ?
-                arr.map(a => <li key={a._id}>{a.type}</li>) :
-                animals.map(a => <li key={a._id}>{a.type}</li>)
+                arr.map(a => <Card key={a._id} data={a}/>) :
+                animals.map(a => <Card key={a._id} data={a}/>)
             }
         </ul>
     </main>
