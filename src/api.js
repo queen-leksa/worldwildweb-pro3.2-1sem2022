@@ -1,11 +1,11 @@
 class Api {
-    static getAll(path = "https://wwf-server.herokuapp.com/api/animals") {
+    static getAll(path = "https://srv.petiteweb.dev/api/animals") {
         return fetch(path);
     }
-    static getSingle(id, path = "https://wwf-server.herokuapp.com/api/animals") { // _id
+    static getSingle(id, path = "https://srv.petiteweb.dev/api/animals") { // _id
         return fetch(path + "/" + id);
     }
-    static add(body, path = "https://wwf-server.herokuapp.com/api/animals") {
+    static add(body, path = "https://srv.petiteweb.dev/api/animals") {
         return fetch(path + "/add", {
             method: "POST",
             headers: {
@@ -15,7 +15,7 @@ class Api {
             body: JSON.stringify(body)
         })
     }
-    static update(id, body, path = "https://wwf-server.herokuapp.com/api/animals") {
+    static update(id, body, path = "https://srv.petiteweb.dev/api/animals") {
         return fetch(path + "/update/" + id, {
             method: "PUT",
             headers: {
